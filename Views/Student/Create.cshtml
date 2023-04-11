@@ -1,0 +1,24 @@
+﻿@model Student;
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center">บันทึกคะแนนสอบ</h1>
+
+<form method="post" asp-controller="Student" asp-action="Create"><!--create is in controller in method IActionReasult-->
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input type="text" asp-for="Name" class="form-control"/>
+        <span asp-validation-for="Name" class="text-danger"></span><!--reference from data-annotation from model Student-->
+    </div>
+    <div class="form-group">
+        <label asp-for="Score"></label>
+        <input type="number" asp-for="Score" class="form-control"/>
+        <span asp-validation-for="Score" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary my-2">บันทึกข้อมูล</button>
+</form>
+
+
+
